@@ -1,38 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
 .App {
+  text-align: center;
+  display: flex;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  height: 100vh;
+  padding: 0px;
+}
+
+.menu {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  flex: 19%;
+  border-right: 2px solid rgb(241, 241, 241);
+  height: 100%;
+}
+
+.logo {
+  border-bottom: 2px solid rgb(241, 241, 241);
+  display: flex;
+  padding: 10px 0px 10px 35px;
+}
+
+.logo-icon {
+  color: rgb(194, 13, 49);
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 40px;
+}
+
+.logo-text {
+  font-size: 25px;
+  font-weight: bolder;
+  margin: auto 0px auto 10px;
+}
+
+.select-company-container {
+  justify-content: left;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 30px;
+  margin: 0px;
+  border-bottom: 2px solid rgb(241, 241, 241);
+  margin-bottom: 10px;
+}
+
+.select-company {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  padding: 13px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.menu-option {
+  display: flex;
+  padding: 10px 10px 10px 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.red-selected {
+  padding: 10px 10px 10px 27px;
+  color: rgb(194, 13, 49);
+  border-left: 3px solid rgb(194, 13, 49);
+}
+
+.red-icon {
+  color: rgb(194, 13, 49);
+}
+
+.grey {
+  color: rgb(174, 174, 183);
+}
+
+.icon-option {
+  cursor: pointer;
+  text-align: center;
+  font-size: 18px;
+  width: 40px;
+}
+
+.name-option {
+  cursor: pointer;
+  font-size: 15px;
+  padding-left: 10px;
+  font-weight: 600;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.mainPage {
+  flex: 81%;
+  height: 100%;
+}
+
+.nav-container {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex;
+  justify-content: right;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.nav-options {
+  display: flex;
+  border-radius: 30px;
+  background: rgb(241, 241, 241);
+  margin: 20px;
+  padding: 2px 0px 2px 0px;
+}
+
+.nav-option {
+  margin: 0px 5px 0px 5px;
+  padding: 5px 15px 5px 15px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: 0.5s ease;
+}
+
+.nav-option:hover {
+  background: rgb(216, 216, 216);
+}
+
+.nav-option-selected {
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 30px;
+  margin: 0px 5px 0px 5px;
+  padding: 5px 15px 5px 15px;
+  /* font-weight: bold; */
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 0px 1px 5px 0px rgba(66, 68, 90, 1);
+  box-shadow: 0px 1px 5px 0px rgba(66, 68, 90, 1);
+}
+
+.notifications-icon {
+  margin: auto 45px auto 30px;
+  font-size: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-image {
+  margin: auto 30px auto 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+img {
+  border-radius: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.title-options-container {
+  margin-bottom: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.title {
+  margin: auto 20px auto 30px;
+  font-size: 35px;
+  font-weight: 900;
+}
+
+.input-container {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 20%;
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  padding: 10px 10px 10px 15px;
+  color: rgb(174, 174, 183);
+}
+
+input {
+  border: none;
+  outline: none;
+  padding: 10px 10px 10px 40px;
+  background: rgb(241, 241, 241);
+  border-radius: 30px;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+}
+
+.select-container {
+  margin-left: auto;
+  margin-right: 30px;
+  display: flex;
+}
+
+.select-box {
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: left;
+  margin-left: 15px;
+}
+
+.select-icon {
+  color: rgb(207, 207, 207);
+  margin-top: 1px;
+  margin-left: 10px;
+}
+
+.add-btn-container {
+  margin-left: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.add-btn {
+  display: flex;
+  background: rgb(194, 13, 49);
   color: white;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  padding: 8px 25px 8px 25px;
+  cursor: pointer;
+  margin-top: auto;
+  margin-bottom: auto;
+  transition: 0.5s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.add-btn-icon {
+  margin-right: 10px;
+  font-size: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-btn-text {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.add-btn:hover {
+  background: rgb(134, 10, 35);
+}
+
+.grid-title {
+  font-weight: 700;
+  color: rgb(174, 174, 183);
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.grid,
+.grid-title {
+  display: grid;
+  grid-template-columns: 5fr 3fr 2fr 2fr;
+  margin: 0 25px 0 25px;
+  text-align: left;
+}
+
+.grid > span {
+  display: flex;
+  padding: 8px 14px;
+  border-bottom: 2px solid rgb(241, 241, 241);
+}
+
+.grid-title > span {
+  padding: 8px 14px 18px 14px;
+  border-bottom: 2px solid rgb(241, 241, 241);
+}
+
+.grid-text {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.loc-icon {
+  text-align: center;
+  font-size: 15px;
+  color: rgb(194, 13, 49);
+  padding: 5px 8px 5px 8px;
+  background: rgb(241, 241, 241);
+  margin: auto 15px auto 5px;
+  border-radius: 30px;
+}
+
+.dot-icon {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 10px;
+  margin-right: 10px;
+}
+
+.red {
+  color: rgb(241, 60, 60);
+}
+
+.yellow {
+  color: rgb(236, 193, 51);
+}
+
+.blue {
+  color: rgb(123, 193, 216);
+}
+
+.green {
+  color: rgb(84, 177, 84);
+}
+
+.pagination-container {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex;
+  justify-content: right;
+  margin: 25px 50px 25px 25px;
+}
+
+.pagination-buttons {
+  margin-left: 20px;
+  display: flex;
+}
+
+.pagination-btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 0px 10px 0px 20px;
 }

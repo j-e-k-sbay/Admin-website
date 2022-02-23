@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Select from 'react-select'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBox } from '@fortawesome/free-solid-svg-icons'
 import { faBuilding } from '@fortawesome/free-solid-svg-icons'
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons'
@@ -9,7 +11,7 @@ import '../App.css';
 import Logo from './Logo';
 import MenuOption from './MenuOption';
 
-function Menu() {
+function Menu({handleClick}) {
     const menuOptionList = ([
         {iconName: faBox, name: "Orders"},
         {iconName: faBuilding, name: "Companies"},
@@ -19,7 +21,61 @@ function Menu() {
         {iconName: faFile, name: "Documents"},
     ]);
 
-    const [selected, setSelected] = useState(1);
+    const customStyles = {
+        indicatorsContainer: () =>({
+            marginLeft: "auto",
+        }),
+
+        // valueContainer: () => ({
+        //     wordWrap: "break-word"
+        // }),
+
+        control: () => ({
+            display: "flex",
+            padding: "5px 0px 5px 30px",
+            fontSize:"15px",
+            outline: "none",
+            cursor: "pointer",
+            background: "white",
+            wordWrap: "break-word"
+          }),
+        
+          menu: (provided, state) => ({
+            ...provided,
+            padding: "5px",
+            marginRight:"15px",
+            marginTop: "0px",
+            // width: "140px",
+            fontSize:"15px",
+          }),
+    
+          option: (provided, state) => ({
+            ...provided,
+            backgroundColor: state.isSelected ? "rgb(194, 13, 49)" : "white",
+            color: "black",
+            "&:hover": {
+                backgroundColor: "rgb(243, 98, 127)"
+              },
+          })
+      }
+
+    const companyOptions = [
+        {value: "Sbay", label: "Sbay"},
+        {value: "Kurs matura informatyka", label: "Kurs matura informatyka"}
+    ]
+
+    const [selected, setSelected] = useState(0);
+    const [sidebar, setSidebar] = useState(false);
+    const [currentCompany, setCurrentCompany] = useState(companyOptions[0]);
+
+    const getCurrentCompany = (selectedCompany) =>{
+        setCurrentCompany(selectedCompany);
+    }
+
+    const showSidebar = () =>{
+        setSidebar(!sidebar);
+        console.log(sidebar);
+    }
 
     const handleChange = (id) =>{
         setSelected(id);
@@ -27,13 +83,22 @@ function Menu() {
 
 
   return (
-    <div className='menu'>
-        <Logo />
+    <>
+        <div className="menu">
+            <div className='logo-container'>
+                <Logo />
+                <div className="exit-icon" onClick={handleClick}>
+                    X
+                </div>
+            </div>
         <div className='select-company-container'>
-            <select className='select-company' name="" id="">
-                <option value="Sbay">Sbay</option>
-                <option value="Kurs Matura Informatyka">Kurs Matura Informatyka</option>
-            </select>
+            <Select
+                isSearchable={false}
+                styles={customStyles}
+                options={companyOptions}
+                onClick={getCurrentCompany}
+                placeholder={currentCompany.label}
+            />
         </div>
         <div>
             {menuOptionList.map((item,index) =>(
@@ -49,7 +114,8 @@ function Menu() {
             )
             )}
         </div>
-    </div>
+        </div>
+    </>
   );
 }
 

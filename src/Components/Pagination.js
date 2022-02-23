@@ -29,7 +29,6 @@ const Pagination = ({ ordersPerPage, totalOrders, paginate, currentPage }) =>{
         )
       ];
 
-    console.log(pageNumbers)
     return(
         <>
         {pageNumbers.length && (

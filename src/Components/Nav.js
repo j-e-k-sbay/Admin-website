@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import NavOption from "./NavOption";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBell } from '@fortawesome/free-regular-svg-icons'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 import picture from "../kurt.jpg"
 
-function Nav (){
+function Nav ({visible,handleClick}){
     const navOptions=["Kurt Cobain","Group management","Company management"];
     const [selected,setSelected] = useState(2);
+    
 
     const handleChange = (index) =>{
         setSelected(index);
@@ -14,6 +16,9 @@ function Nav (){
 
     return(
         <div className="nav-container">
+            <div className={visible ? "menu-bars": "menu-bars-active"}>
+                <FontAwesomeIcon icon={faBars} onClick={handleClick}/>
+            </div>
             <div className="nav-options">
                 {navOptions.map((item,index) =>(
                     <NavOption 

@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+.addpopup-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addpopup-inner {
+  position: relative;
+  padding: 30px;
+  background-color: white;
+}
+
+.addpopup-inner .close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  background-color: rgb(194, 13, 49);
+  cursor: pointer;
+  padding: 1px 4px;
+  font-size: 10px;
+  text-align: center;
+  color: white;
+  border: 2px solid rgb(194, 13, 49);
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  transition: 0.5s ease;
+}
+
+.addpopup-inner .close-btn:hover {
+  color: rgb(194, 13, 49);
+  background-color: white;
+  border: 2px solid rgb(194, 13, 49);
+}
+
+.addpopup-inner .close-btn .text {
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.add-container {
+  display: flex;
+}
+
+.add-box {
+  padding: 10px;
+}
+
+.add-title {
+  text-align: left;
+  color: rgb(194, 13, 49);
+  font-weight: bold;
+  font-size: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgb(241, 241, 241);
+}
+
+.input-title {
+  padding: 10px 0px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.input-box {
+  border: none;
+  outline: none;
+  padding: 10px 10px 10px 15px;
+  background: rgb(241, 241, 241);
+  border-radius: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.date-picker {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.submit-btn-container {
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: 15px;
+  margin-right: 10px;
+}
+
+.submit-btn {
+  display: flex;
+  background: rgb(194, 13, 49);
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: auto;
+  margin-bottom: auto;
+  transition: 0.5s ease;
+}
+
+.submit-btn:hover {
+  background: rgb(134, 10, 35);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

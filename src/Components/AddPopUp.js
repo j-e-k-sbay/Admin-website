@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import AdapterDateFns from '@date-io/date-fns';
 import LocalizationProvider from '@material-ui/lab/LocalizationProvider';
 import DateTimePicker from '@material-ui/lab/DateTimePicker';
-import './AddPopUp.css';
+import '../Styles/AddPopUp.css';
 
 function AddPopUp({trigger,setTrigger,getNewOrder}){
     const [value, setValue] = React.useState(new Date());

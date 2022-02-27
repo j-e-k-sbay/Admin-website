@@ -1,0 +1,17 @@
+.logo {
+  display: flex;
+  padding: 10px 15px 10px 35px;
+}
+
+.logo-icon {
+  color: rgb(194, 13, 49);
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 40px;
+}
+
+.logo-text {
+  font-size: 25px;
+  font-weight: bolder;
+  margin: auto 0px auto 10px;
+}

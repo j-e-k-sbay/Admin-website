@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import '../App.css';
+import '../Styles/MenuOption.css';
 
 function MenuOption({iconName, id, name, classTitle1, classTitle2, handleClick}) {
 

@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import '../Styles/Pagination.css';
 
 const Pagination = ({ ordersPerPage, totalOrders, paginate, currentPage }) =>{
     const pageNumbers = [];
@@ -20,14 +21,6 @@ const Pagination = ({ ordersPerPage, totalOrders, paginate, currentPage }) =>{
             paginate(currentPage-1);
         }
     };
-
-    const compactPaginationPages = [
-        ...new Set(
-          pageNumbers
-            .concat(pageNumbers.slice(currentPage - 2, currentPage))
-            .concat(pageNumbers.slice(-1))
-        )
-      ];
 
     return(
         <>

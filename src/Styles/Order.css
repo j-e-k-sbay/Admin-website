@@ -1,0 +1,46 @@
+.grid {
+  display: grid;
+  grid-template-columns: 5fr 3fr 2fr 2fr;
+  margin: 0 25px 0 25px;
+  text-align: left;
+}
+
+.grid-text {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.loc-icon {
+  text-align: center;
+  font-size: 15px;
+  color: rgb(194, 13, 49);
+  padding: 5px 8px 5px 8px;
+  background: rgb(241, 241, 241);
+  margin: auto 15px auto 5px;
+  border-radius: 30px;
+}
+
+.dot-icon {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 10px;
+  margin-right: 10px;
+}
+
+.red {
+  color: rgb(241, 60, 60);
+}
+
+.yellow {
+  color: rgb(236, 193, 51);
+}
+
+.blue {
+  color: rgb(123, 193, 216);
+}
+
+.green {
+  color: rgb(84, 177, 84);
+}

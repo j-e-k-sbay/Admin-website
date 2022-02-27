@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMonero } from '@fortawesome/free-brands-svg-icons'
-import '../App.css';
+import '../Styles/Logo.css';
 
 function Logo() {
   return (

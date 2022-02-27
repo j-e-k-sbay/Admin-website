@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import Select from 'react-select'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBox } from '@fortawesome/free-solid-svg-icons'
 import { faBuilding } from '@fortawesome/free-solid-svg-icons'
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faDotCircle } from '@fortawesome/free-solid-svg-icons'
 import { faFile } from '@fortawesome/free-solid-svg-icons'
-import '../App.css';
 import Logo from './Logo';
 import MenuOption from './MenuOption';
+import '../Styles/Menu.css';
 
 function Menu({handleClick}) {
     const menuOptionList = ([
@@ -26,10 +25,6 @@ function Menu({handleClick}) {
             marginLeft: "auto",
         }),
 
-        // valueContainer: () => ({
-        //     wordWrap: "break-word"
-        // }),
-
         control: () => ({
             display: "flex",
             padding: "5px 0px 5px 30px",
@@ -45,7 +40,6 @@ function Menu({handleClick}) {
             padding: "5px",
             marginRight:"15px",
             marginTop: "0px",
-            // width: "140px",
             fontSize:"15px",
           }),
     
@@ -65,16 +59,10 @@ function Menu({handleClick}) {
     ]
 
     const [selected, setSelected] = useState(0);
-    const [sidebar, setSidebar] = useState(false);
     const [currentCompany, setCurrentCompany] = useState(companyOptions[0]);
 
     const getCurrentCompany = (selectedCompany) =>{
         setCurrentCompany(selectedCompany);
-    }
-
-    const showSidebar = () =>{
-        setSidebar(!sidebar);
-        console.log(sidebar);
     }
 
     const handleChange = (id) =>{

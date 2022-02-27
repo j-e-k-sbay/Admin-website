@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import { faDotCircle } from '@fortawesome/free-solid-svg-icons'
-import '../App.css';
+import '../Styles/Order.css';
 
 function Order({country,city,street,date,time,price,status}) {
   return (

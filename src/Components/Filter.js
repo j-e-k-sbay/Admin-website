@@ -2,20 +2,39 @@ import React, { useEffect, useState } from "react";
 import PopUp from './PopUp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFilter } from '@fortawesome/free-solid-svg-icons'
+import { faCalendar } from '@fortawesome/free-solid-svg-icons'
 import CountryFilter from "./CountryFilter";
 import PriceFilter from "./PriceFilter";
 import StatusFilter from "./StatusFilter";
+import CalendarFilter from "./CalendarFilter";
 import '../Styles/Filter.css';
 
 function Filter ({orders, getFilteredOrders}) {
     const [visible, setVisible] = useState(false);
+    const [isCalendar, setIsCalendar] = useState(false);
     const [currentCountry , setCurrentCountry] = useState({value: "All", label: "country"});
     const [currentPrice, setCurrentPrice] = useState({value: "All", label: "price"});
-    const [currentStatus,setCurrentStatus] = useState({value: "All", label: "status"},);
-    
+    const [currentStatus,setCurrentStatus] = useState({value: "All", label: "status"});
+    const [currentStart, setCurrentStart] = React.useState(new Date("2021-02-01 00:00:00")); 
+    const [currentEnd, setCurrentEnd] = React.useState(new Date());
       
     const changeVisible = () =>{
         setVisible(!visible);
+    }
+
+    const changeIsCalendar = () =>{
+      setIsCalendar(!isCalendar);
+    }
+
+    const cleanFilter = () =>{
+      setCurrentCountry({value: "All", label: "country"});
+      setCurrentPrice({value: "All", label: "price"});
+      setCurrentStatus({value: "All", label: "status"});
+      setCurrentStart(new Date("2021-02-01 00:00:00"));
+      setCurrentEnd(new Date());
+      getFilteredOrders(orders);
+      setVisible(!visible);
+      setIsCalendar(false);
     }
 
     const filterPrice = (tab) => {
@@ -55,6 +74,25 @@ function Filter ({orders, getFilteredOrders}) {
       }
     }
 
+    const getDateTime = (order) =>{
+        var dateTime = order.date+" "+order.time;
+        var current = new Date(dateTime).getTime();
+        return current;
+    }
+
+    const filterDate = (tab) =>{
+      var start = currentStart;
+      var end = currentEnd;
+      if(currentStart.getTime()>currentEnd.getTime())
+      {
+        start = currentEnd;
+        end = currentStart;
+      }
+        const filteredOrders = tab.filter(order => 
+          getDateTime(order)>=start.getTime() && getDateTime(order)<=end.getTime());
+        return filteredOrders;
+    }
+
     const [countryOptions,setCountryOptions] = useState([]);
     
     const getCountries =() =>{
@@ -81,13 +119,15 @@ function Filter ({orders, getFilteredOrders}) {
       const ordersByCountry = filterCountry(orders);
       const ordersByPrice = filterPrice(ordersByCountry);
       const ordersByStatus = filterStatus(ordersByPrice);
-      return ordersByStatus;
+      const ordersByDate = filterDate(ordersByStatus);
+      return ordersByDate;
     }
 
     const onClickSubmitFilteringOrders = () =>{
       const filteredOrders = filterOrders();
       getFilteredOrders(filteredOrders);
-      setVisible(!visible);
+      changeVisible();
+      setIsCalendar(false);
     }
 
     useEffect(()=>{
@@ -99,6 +139,9 @@ function Filter ({orders, getFilteredOrders}) {
             <div>
                 <PopUp trigger={visible}>
                   <div className='filter-container'>
+                  <button className='filter-btn' onClick={cleanFilter}>
+                        <div className='filter-btn-text'>Clean Filters</div> 
+                    </button>
                     <CountryFilter
                         country = {currentCountry}
                         setCountry={(country) => {setCurrentCountry(country)}}
@@ -115,6 +158,21 @@ function Filter ({orders, getFilteredOrders}) {
                         setStatus={(status) => {setCurrentStatus(status)}}
                     />
 
+                    <div className="dropdown">
+                      <button className="dropbtn" onClick={changeIsCalendar}>
+                        <div className='dropbtn-item'><FontAwesomeIcon icon={faCalendar}/></div>
+                        <div className='dropbtn-text'>Calendar</div>
+                      </button>
+                      {isCalendar ? <div className="dropdown-content">
+                      <CalendarFilter
+                        start={currentStart}
+                        setStart={(start) => {setCurrentStart(start)}}
+                        end={currentEnd}
+                        setEnd={(end) => {setCurrentEnd(end)}}
+                      /> 
+                      </div>: <></>}
+                  </div>
+
                     <button className='filter-btn' onClick={onClickSubmitFilteringOrders}>
                       <div className='filter-btn-text'>Submit</div> 
                     </button>
@@ -129,6 +187,8 @@ function Filter ({orders, getFilteredOrders}) {
                 </button>
               </div>
               }
+              
+
         </div>
     );
 }

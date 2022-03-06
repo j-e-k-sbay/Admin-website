@@ -104,10 +104,17 @@ function AddPopUp({trigger,setTrigger,getNewOrder}){
        
             <div className="addpopup-container">
                 <div className='addpopup-inner'>
-                    <button className='close-btn' onClick={setTrigger}>
-                        <div className='text'>X</div>
-                    </button>
+                    <div className='addpopup-head'>
                     <div className='add-title'>New Order</div>
+                        <div className='close-btn-container'>
+                            <button className='close-btn' onClick={setTrigger}>
+                                <div className='text'>X</div>
+                            </button>
+                        </div>
+                        
+                    </div>
+                    
+                    
                     <div className='add-container'>
                         <div className='add-box'>
                             <div className='input-title'>Country</div>

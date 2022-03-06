@@ -55,7 +55,6 @@ function PriceFilter ({setPrice, price}) {
     }
 
     return (
-        <div>
             <div className='select-box'>
                 <Select
                 placeholder={price.label}
@@ -66,7 +65,6 @@ function PriceFilter ({setPrice, price}) {
                 components={{ DropdownIndicator:() => null  ,IndicatorSeparator:() => null }}
                 />
             </div>
-        </div>
     );
 }
 

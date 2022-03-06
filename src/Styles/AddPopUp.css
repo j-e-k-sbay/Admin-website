@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+@media only screen and (min-width: 1000px) {
+  .add-container {
+    display: flex;
+  }
+}
+
 .addpopup-container {
   position: fixed;
   top: 0;
@@ -14,14 +21,22 @@
 }
 
 .addpopup-inner {
-  padding: 30px;
+  padding: 10px 30px 30px 30px;
   background-color: white;
 }
 
+.addpopup-head {
+  display: flex;
+}
+
+.close-btn-container {
+  margin-left: auto;
+  margin-bottom: auto;
+  padding-bottom: 20px;
+  margin-right: -20px;
+}
+
 .addpopup-inner .close-btn {
-  position: absolute;
-  top: 16px;
-  right: 16px;
   outline: none;
   border: none;
   border-radius: 30px;
@@ -43,13 +58,9 @@
   border: 2px solid rgb(194, 13, 49);
 }
 
-.addpopup-inner .close-btn .text {
+.addpopup-inner .text {
   margin-bottom: auto;
   margin-top: auto;
-}
-
-.add-container {
-  display: flex;
 }
 
 .add-box {
@@ -61,7 +72,8 @@
   color: rgb(194, 13, 49);
   font-weight: bold;
   font-size: 30px;
-  padding-bottom: 20px;
+  padding-top: 30px;
+  padding-bottom: 5px;
   border-bottom: 2px solid rgb(241, 241, 241);
 }
 

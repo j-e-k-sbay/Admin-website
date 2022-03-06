@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Select from 'react-select'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import { faCalendar } from '@fortawesome/free-solid-svg-icons'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import Order from './Order';
 import Pagination from './Pagination';
@@ -117,21 +115,12 @@ function OrderList() {
             </div>
 
             <div className='select-container'>
+
               <Filter 
                 orders = {orders}
                 getFilteredOrders = {getFilteredOrders}
               />
               
-
-              <div className='select-box'>
-                <Select 
-                  placeholder="Calendar"
-                  isSearchable={false} 
-                  styles={customStyles} 
-                  components={{ DropdownIndicator:() => <div className='select-icon'><FontAwesomeIcon icon={faCalendar}/></div> ,IndicatorSeparator:() => null }}
-                />
-              </div>
-
               <div className='add-btn-container'>
                 <button className='add-btn' onClick={onClickAddBtn}>
                   <div className='add-btn-icon'><FontAwesomeIcon icon={faPlus}/></div> 

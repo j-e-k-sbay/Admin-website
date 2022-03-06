@@ -55,7 +55,6 @@ function StatusFilter ({setStatus, status}) {
     }
 
     return (
-        <div>
             <div className='select-box'>
                 <Select
                     placeholder={status.label}
@@ -66,7 +65,6 @@ function StatusFilter ({setStatus, status}) {
                     components={{ DropdownIndicator:() => null  ,IndicatorSeparator:() => null }}
                 />
             </div>
-        </div>
     );
 }
 

@@ -5,9 +5,7 @@ function PopUp({trigger,children}){
     return (trigger) ? (
        
             <div className="popup-container">
-                <div>
                     {children}
-                </div>
             </div>
        
     ) : "";

@@ -47,7 +47,6 @@ function CountryFilter ({setCountry, country, countryOptions}) {
 
 
     return (
-        <div>
             <div className='select-box'>
                 <Select
                     placeholder={country.label}
@@ -59,7 +58,6 @@ function CountryFilter ({setCountry, country, countryOptions}) {
                     components={{ DropdownIndicator:() => null  ,IndicatorSeparator:() => null }}
                   />
             </div>
-        </div>
     );
 }
 

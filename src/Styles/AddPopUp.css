@@ -2,17 +2,18 @@
 .addpopup-container {
   position: fixed;
   top: 0;
-  bottom: 0;
+  left: 0;
+  z-index: 1050;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  outline: 0;
   background-color: rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
 .addpopup-inner {
-  position: relative;
   padding: 30px;
   background-color: white;
 }
